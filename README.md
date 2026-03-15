@@ -9,6 +9,7 @@ The binary information that is produced by the source generator cannot be direct
 
 This project uses two different modulation schemes:
 1. On-Off Keying (OOK)
+
 OOK is the simplest form of intensity modulation. A binary 1 is represented by transmitted nonzero optical power, while a binary 0 is represented by transmitting zero optical power, or at least reducing the power significantly in accordance with the extinction ratio. 
 ```math
  P(t) = \begin{cases} P_1, & \text{bit = 1} \\ P_0, & \text{bit = 0} \end{cases}
@@ -16,6 +17,7 @@ OOK is the simplest form of intensity modulation. A binary 1 is represented by t
 where $P_1$ and $P_0$ represent the optical power levels for logical 1 and 0.
 
 2. Binary Frequency Shift Keying (BFSK)
+
 BFSK encodes information using two different carrier frequencies. Instead of turning the signal on and off, the transmitter switches between two optical modulation frequencies that represent the bit value. 
 ```math
 	s(t) =
@@ -65,11 +67,13 @@ The source generator function converts input text into a binary bit stream. It s
 
 There are two possible cases:
 1. Text Entry
+
 - The text characters are converted to ASCII decimal values.
 - The ASCII decimal values are converted to binary.
 - The binary code is concatenated to form a single binary sequence.
 
 2. Random Bit Generation
+
 - The function generates many random bits uniformly.
 
 ## Optical Transmitter
@@ -86,9 +90,11 @@ The function has two outputs
 
 Depending on the modulation type, the tranmsitter acts in two ways:
 1. OOK
+
 The OOK modulator is called, and a decision threshold is calculated for the demodulator. The filter delay and other parameters are stored for the receiver.
 
 2. BFSK
+
 The BFSK modulator is called, and the carrier frequencies, sampling rate, and samples per bit are stored for the receiver.
 
 ## SSFM Channel
@@ -131,10 +137,12 @@ The function has a single output:
 - *`recovered_bits`* - the binary sequence decoded from the received signal
 
 Depending on the chosen modulation scheme, the function acts in two ways:
-1. OOK 
+1. OOK
+   
 The OOK demodulator is called and a matched filter is applied (the same as the transmitter), and the bits are sampled at their center to apply a decision threshold to determine if it is a 1 or a 0.
 
 2. BFSK
+   
 The BFSK demodulator is called and the signal is divided into bit-length segments, the each segment is correlated with the two carrier frequencies, and the bit value is chosen corresponding to the higher correlation energy.
 
 ## Decoder
@@ -164,17 +172,22 @@ This displays the decoded message from the received signal and provides a perfor
 Several plots are used to visualize the progression of the signal and performance of the different modulation schemes:
 
 1. Generated Bits & Transmitted Signals
+   
 This includes the binary stream from the source as a stem plot, and the OOK and BFSK transmitted waveforms.
 
 2. Live Pulse Propagation
+   
 This shows the real-time intensity evolution along the fiber using the SSFM. It allows for observation of the effects of dispersion, attenuation, and nonlinearities.
 
 3. OOK Received Signals & Bits Comparison
+   
 This shows the received OOK waveform and a stem plot comparing the transmitted and recovered bits.
 
 4. BFSK Received Signals & Bits Comparison
+   
 This shows the received BFSK waveform and a stem plot comparing the transmitted and recovered bits.
 
 5. Stress Test Analysis
+   
 This shows the Bit Error Rate (BER) and Signal-to-Noise Ratio (SNR) to assess noise tolerance. It also shows the BER and Extinction Ratio (ER) to observe the performance of OOK against varying ERs.
 
