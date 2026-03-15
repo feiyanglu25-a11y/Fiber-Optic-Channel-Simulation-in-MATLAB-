@@ -123,6 +123,7 @@ Using the live visualization window, we can physically interpret how the pulse c
 - The amplitude-dependant phase shifts from $\gamma\$ create nonlinear distortions
 - The overall power of the pulse will decrease due to fiber attenuation, $\alpha\$
 
+[More on the use of SSFM in MATLAB](https://www.researchgate.net/publication/281441538_An_introduction_to_the_Split_Step_Fourier_Method_using_MATLAB)
 ## Receiver Function
 The receiver function recovers the original its from the optical signal after propagation through the fiber. It acts similarly to the transmitter by calling the appropriate demodulator.
 
