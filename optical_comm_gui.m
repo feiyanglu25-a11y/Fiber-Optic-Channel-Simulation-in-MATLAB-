@@ -156,6 +156,7 @@ function optical_comm_gui()
         cfg_o.bit_rate = bit_rate; cfg_o.samples_per_bit = spb; cfg_o.Fs = Fs; cfg_o.ER_dB = erInput.Value;
         [tx_o, par_o] = transmitter(bits, 'OOK', cfg_o, axOOK_t);
         [rx_o, ~] = SSFM_channel(tx_o, Fs, L, 200, f_struct, pauseTime, axOOK_c);
+        title(axOOK_c, 'Intensity with OOK');
         
         par_o.threshold = (max(abs(rx_o)) + min(abs(rx_o))) / 2;
         [corr, lags] = xcorr(abs(rx_o), abs(tx_o));
@@ -170,6 +171,7 @@ function optical_comm_gui()
         statusLabel.Text = 'Running BFSK Path...';
         [tx_f, par_f] = transmitter(bits, 'BFSK', cfg_o, axBFSK_t);
         [rx_f, ~] = SSFM_channel(tx_f, Fs, L, 200, f_struct, pauseTime, axBFSK_c);
+        title(axBFSK_c, 'Intensity with BFSK');
         
         [corr_f, lags_f] = xcorr(abs(rx_f), abs(tx_f));
         [~, idx_f] = max(corr_f);
