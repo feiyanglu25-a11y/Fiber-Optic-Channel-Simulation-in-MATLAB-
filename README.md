@@ -63,6 +63,34 @@ SNR measures the strength of the optical signal relative to the background noise
 
 ER is the ratio between the power of a logic "1" and logic "0" ($ER = P_1 / P_0$). It models the residual light leakage of a laser when it is supposed to be off. A low ER reduces the Decision Margin. For OOK, this makes it harder to set an optimal threshold, significantly increasing the BER. BFSK is generally more resilient to ER degradation as it relies on frequency deviation rather than absolute power levels.
 
+### Stress test
+
+To evaluate the system's robustness under realistic conditions, we analyze the Bit Error Rate (BER) against two primary constraints: Signal-to-Noise Ratio (SNR) and Extinction Ratio (ER). These parameters represent the environmental noise and hardware non-idealities that limit optical communication performance.
+
+$$
+\text{BER} = \frac{\text{sum}(\text{bits} \neq \text{decoded bits})}{\text{length}(\text{bits})}
+$$
+
+
+1. Signal to Noise Ratio (SNR)
+
+SNR measures the strength of the optical signal relative to the background noise (thermal and shot noise) at the receiver. A low SNR causes random "bit-flipping." As noise power approaches signal power, the receiver fails to distinguish pulses, leading to a higher BER.
+
+$$
+\sigma^2 = \frac{P_{avg}}{10^{(SNR_{dB}/10)} \cdot (1/N_{spb})}
+$$
+
+Where:
+* $P_{avg}$: Mean square power of the transmitted signal.
+* $N_{spb}$: Samples per bit (set to 20 in our GUI).
+
+2. Extinction Ratio (ER)
+
+ER is the ratio between the power of a logic "1" and logic "0" ($ER = P_1 / P_0$). It models the residual light leakage of a laser when it is supposed to be off. A low ER reduces the Decision Margin. For OOK, this makes it harder to set an optimal threshold, significantly increasing the BER. BFSK is generally more resilient to ER degradation as it relies on frequency deviation rather than absolute power levels.
+
+$$
+V_{th} = \frac{1 + \sqrt{1/10^{(ER_{dB}/10)}}}{2} \cdot A_{norm}
+$$
 
 ## Modulation/Demodulation Schemes
 The project implements two modulation and demodulation schemes - On-Off Keying (OOK) and Binary Frequency Shift Keying (BFSK). 
