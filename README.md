@@ -125,6 +125,13 @@ The OOK modulator is called, and a decision threshold is calculated for the demo
 
 The BFSK modulator is called, and the carrier frequencies, sampling rate, and samples per bit are stored for the receiver.
 
+### The Impact of Padding
+When the signal is propagated along the fiber, it is possible that some of the bits are lost due to the stress of the environment (such as attentuation, dispersion, nonlinearities, etc.). As a result, the message received will differ from that which is transmitted. This can be avoided by use of padding at either end of the message, which involves concatenating 0 bits to the beginning and end of the message, so that these bits are not accounted for in the demodulation of the signal and thus, if they are lost, do not affect the received message.
+
+The figure below shows the effects of padding. In the first figure, there are no bits used for padding, and as a result, some bits were lost during transmission and the received message differed from the transmitted message. When padding was used, however, the bits that were lost did not effect the overall received message. 
+
+![Alt text](padding.png)
+
 ## SSFM Channel
 The function SSFM_channel simulates the propagation of the optical signal through a fiber optic channel using the Split-Step Fourier Method (SSFM) to incrementally solve the Nonlinear Schrödinger Equation (NLSE), which governs the behaviour of otical pulses in a fiber, accounting for attenuation, dispersion, and nonlinearities. 
 
@@ -154,6 +161,7 @@ Using the live visualization window, we can physically interpret how the pulse c
 [More on the use of the SSFM in MATLAB](https://www.researchgate.net/publication/281441538_An_introduction_to_the_Split_Step_Fourier_Method_using_MATLAB)
 
 [More on the use of the symmetrical implementation of the SSFM in MATLAB in section 3.7 of the following text](https://pce-fet.com/common/library/books/25/7811_[Binh,_Le_Nguyen]_Optical_Fiber_Communication_Syst(b-ok.org).pdf)
+
 ## Receiver Function
 The receiver function recovers the original its from the optical signal after propagation through the fiber. It acts similarly to the transmitter by calling the appropriate demodulator.
 
