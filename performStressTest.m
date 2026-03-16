@@ -59,6 +59,7 @@ function performStressTest(bits, targetSNR, targetER, axSNR, axER)
     cla(axSNR);
     semilogy(axSNR, EbN0_range, ber_ook_snr, 'b-o', 'DisplayName', 'OOK'); hold(axSNR, 'on');
     semilogy(axSNR, EbN0_range, ber_fsk_snr, 'r-s', 'DisplayName', 'BFSK');
+    xlabel(axSNR,'SNR(dB)');ylabel(axSNR,'BER');
     xline(axSNR, targetSNR, '--k', 'LineWidth', 1.5, 'Label', 'Current SNR');
     grid(axSNR, 'on'); legend(axSNR, 'show');
 
@@ -66,6 +67,7 @@ function performStressTest(bits, targetSNR, targetER, axSNR, axER)
     cla(axER);
     semilogy(axER, er_range, ber_ook_er, 'b-o', 'DisplayName', 'OOK'); hold(axER, 'on');
     semilogy(axER, er_range, ber_fsk_er, 'r-s', 'DisplayName', 'BFSK');
+    xlabel(axER, 'ER(dB)');ylabel(axER,'BER');
     xline(axER, targetER, '--k', 'LineWidth', 1.5, 'Label', 'Current ER');
     grid(axER, 'on'); legend(axER, 'show');
 end
