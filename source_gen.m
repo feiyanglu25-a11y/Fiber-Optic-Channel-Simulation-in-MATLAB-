@@ -24,7 +24,7 @@ elseif isnumeric(input_data) && isscalar(input_data) % if it isn't text it will 
         msg_type = 'Random bits';
 end 
 
-if nargin >1 && ~isempty(target_ax)
+if nargin >1 && ~isempty(target_ax) % if input number > 1, use GUI. Otherwise use an independent figure portal
     %GUI
     cla(target_ax);
     stem(target_ax, bits, 'filled');
