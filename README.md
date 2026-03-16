@@ -95,7 +95,7 @@ The transmitter function generates the optical signal to be sent through the fib
 The function requires several inputs:
 - *`bits`* - the binary data produced by the source generator
 - *`mod_type`* - the chosen modulation type
-- *`config`* - a structure containing simulation parameters ($bit_rate$, $samples_per_bit$, $F_{s}$, $ER_{dB}$)
+- *`config`* - a structure containing simulation parameters (*`bit_rate`*, *`samples_per_bit`*, *`Fs`*, *`ER_dB`*)
 
 The function has two outputs
 - *`tx_signal`* - the transmitted signal
