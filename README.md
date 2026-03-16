@@ -212,11 +212,11 @@ Several plots are used to visualize the progression of the signal and performanc
 
 1. Generated Bits & Transmitted Signals
    
-This includes the binary stream from the source as a stem plot, and the OOK and BFSK transmitted waveforms.
+This includes the binary stream from the source as a stem plot, and the OOK and BFSK transmitted waveforms. In the BFSK case, since there are high frequency carrier signals present, it is helpful to zoom in on the figure to be able to discern between different bits. 
 
 2. Live Pulse Propagation
    
-This shows the real-time intensity evolution along the fiber using the SSFM. It allows for observation of the effects of dispersion, attenuation, and nonlinearities.
+This shows the real-time intensity evolution along the fiber using the SSFM. It allows for observation of the effects of dispersion, attenuation, and nonlinearities. Note that these figures show the evolution of the complex envelope of the signal. This is why, in the case of BFSK, we see just a straight line. With so many high frequnecy carrier signals present the spacing between the signals is nearly indiscernible in the time domain, and the envelope appears approximately as a rectangle.
 
 3. OOK Received Signals & Bits Comparison
    
@@ -224,7 +224,7 @@ This shows the received OOK waveform and a stem plot comparing the transmitted a
 
 4. BFSK Received Signals & Bits Comparison
    
-This shows the received BFSK waveform and a stem plot comparing the transmitted and recovered bits.
+This shows the received BFSK waveform and a stem plot comparing the transmitted and recovered bits. It is helpful to zoom in on the top figure to discern between the different bits. 
 
 5. Stress Test Analysis
    
