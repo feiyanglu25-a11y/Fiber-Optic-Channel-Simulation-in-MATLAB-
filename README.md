@@ -56,7 +56,7 @@ The project implements two modulation and demodulation schemes - On-Off Keying (
 
 ### On-Off Keying
 The OOK modulator converts a stream of binary bits into optical power levels, by mapping a logical 1 to a higher power, and a logical 0 to a lower power (determined by the extinction ratio). This applies a pulse shaping using a square-root raised cosine filter to minimize inter-symbol interference and produce a smooth transition between bits. 
-The OOK demodulator receives the optical power signal and applies a matched filter (the same used in the transmitter) to minimize the signal-to-noise ratio (SNR). It samples the filtered signal at the optimal points (center of each bit) and compares thsi to a threshold power to recover the original bits.
+The OOK demodulator receives the optical power signal and applies a matched filter (the same used in the transmitter) to minimize the signal-to-noise ratio (SNR). It samples the filtered signal at the optimal points (center of each bit) and compares this to a threshold power to recover the original bits.
 
 ### Binary Frequency Shift Keying
 The BFSK modulator encodes each bit as a different optical carrier frequency. It uses a continuous-phase FSK to maintain phase continuity between bits, which reduces spectral spreading of the pulse.
