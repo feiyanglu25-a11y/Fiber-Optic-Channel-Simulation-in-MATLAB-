@@ -54,19 +54,6 @@ The SSFM algorithm divides the fiber int many small propagation steps. Within ea
 
 To evaluate the system's robustness under realistic conditions, we analyze the Bit Error Rate (BER) against two primary constraints: Signal-to-Noise Ratio (SNR) and Extinction Ratio (ER). These parameters represent the environmental noise and hardware non-idealities that limit optical communication performance.
 
-1. Signal to Noise Ratio (SNR)
-
-SNR measures the strength of the optical signal relative to the background noise (thermal and shot noise) at the receiver. A low SNR causes random "bit-flipping." As noise power approaches signal power, the receiver fails to distinguish pulses, leading to a higher BER.
-
-
-2. Extinction Ratio (ER)
-
-ER is the ratio between the power of a logic "1" and logic "0" ($ER = P_1 / P_0$). It models the residual light leakage of a laser when it is supposed to be off. A low ER reduces the Decision Margin. For OOK, this makes it harder to set an optimal threshold, significantly increasing the BER. BFSK is generally more resilient to ER degradation as it relies on frequency deviation rather than absolute power levels.
-
-### Stress test
-
-To evaluate the system's robustness under realistic conditions, we analyze the Bit Error Rate (BER) against two primary constraints: Signal-to-Noise Ratio (SNR) and Extinction Ratio (ER). These parameters represent the environmental noise and hardware non-idealities that limit optical communication performance.
-
 $$
 \text{BER} = \frac{\text{sum}(\text{bits} \neq \text{decoded bits})}{\text{length}(\text{bits})}
 $$
