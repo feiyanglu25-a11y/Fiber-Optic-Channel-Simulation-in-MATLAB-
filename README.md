@@ -220,5 +220,6 @@ This shows the received BFSK waveform and a stem plot comparing the transmitted 
 
 5. Stress Test Analysis
    
-This shows the Bit Error Rate (BER) and Signal-to-Noise Ratio (SNR) to assess noise tolerance. It also shows the BER and Extinction Ratio (ER) to observe the performance of OOK against varying ERs.
+This shows the Bit Error Rate (BER) and Signal-to-Noise Ratio (SNR) to assess noise tolerance. It also shows the BER and Extinction Ratio (ER) to observe the performance of OOK against varying ERs. The vertical black dashed lines in both plots indicate the currently selected parameters (Target $E_b/N_0$ and Extinction Ratio) from the Configuration Panel.
+
 
